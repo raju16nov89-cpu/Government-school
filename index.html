@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Government Primary School – Banjara Basti Nandpura</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --orange:#FF6B35;
+  --yellow:#FFD23F;
+  --green:#06D6A0;
+  --blue:#118AB2;
+  --navy:#073B4C;
+  --pink:#EF476F;
+  --white:#FFFFFF;
+  --light:#F8FAFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Hind',sans-serif;background:var(--light);color:var(--navy);overflow-x:hidden;}
+
+/* ── NAVBAR ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:64px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo .icon{font-size:28px;}
+.nav-logo span{font-family:'Baloo 2',cursive;font-weight:800;font-size:16px;color:#fff;line-height:1.2;}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{
+  color:rgba(255,255,255,0.85);text-decoration:none;
+  font-size:13px;font-weight:500;padding:6px 12px;border-radius:20px;
+  transition:.2s;
+}
+.nav-links a:hover{background:var(--orange);color:#fff;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background: linear-gradient(135deg, #073B4C 0%, #118AB2 50%, #06D6A0 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:100px 5% 60px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.floating-shapes span{
+  position:absolute;border-radius:50%;opacity:0.12;animation:float 6s infinite ease-in-out;
+}
+.floating-shapes span:nth-child(1){width:200px;height:200px;background:var(--yellow);top:10%;left:5%;animation-delay:0s;}
+.floating-shapes span:nth-child(2){width:120px;height:120px;background:var(--pink);top:60%;right:8%;animation-delay:2s;}
+.floating-shapes span:nth-child(3){width:80px;height:80px;background:var(--green);bottom:15%;left:20%;animation-delay:4s;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+
+.hero-badge{
+  background:var(--yellow);color:var(--navy);
+  font-size:12px;font-weight:700;padding:6px 18px;border-radius:20px;
+  margin-bottom:20px;display:inline-block;letter-spacing:1px;
+  animation:fadeDown .8s ease both;
+}
+.hero h1{
+  font-family:'Baloo 2',cursive;font-weight:800;
+  font-size:clamp(28px,5vw,56px);color:#fff;line-height:1.15;
+  margin-bottom:12px;animation:fadeDown .9s .1s ease both;
+}
+.hero h1 span{color:var(--yellow);}
+.hero p{
+  font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,0.85);
+  max-width:600px;margin:0 auto 36px;line-height:1.8;
+  animation:fadeDown 1s .2s ease both;
+}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeDown 1s .3s ease both;}
+.btn{
+  padding:13px 28px;border-radius:30px;font-weight:700;font-size:15px;
+  text-decoration:none;transition:.25s;cursor:pointer;border:none;
+}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 20px rgba(255,107,53,0.5);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,107,53,0.6);}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.6);}
+.btn-outline:hover{background:rgba(255,255,255,0.15);transform:translateY(-3px);}
+
+.hero-stats{
+  display:flex;gap:30px;flex-wrap:wrap;justify-content:center;
+  margin-top:50px;animation:fadeDown 1s .4s ease both;
+}
+.stat{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:16px;padding:18px 28px;text-align:center;min-width:120px;}
+.stat .num{font-family:'Baloo 2',cursive;font-size:30px;font-weight:800;color:var(--yellow);}
+.stat .label{font-size:12px;color:rgba(255,255,255,0.8);margin-top:2px;}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── SECTIONS SHARED ── */
+section{padding:80px 5%;}
+.section-tag{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;
+  padding:5px 16px;border-radius:20px;margin-bottom:12px;text-transform:uppercase;
+}
+.section-title{font-family:'Baloo 2',cursive;font-size:clamp(24px,4vw,38px);font-weight:800;margin-bottom:8px;}
+.section-sub{font-size:15px;color:#555;max-width:560px;line-height:1.7;}
+.section-head{margin-bottom:48px;}
+
+/* ── ABOUT ── */
+#about{background:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-img{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border-radius:24px;aspect-ratio:4/3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:80px;gap:10px;position:relative;overflow:hidden;
+  box-shadow:0 20px 50px rgba(17,138,178,0.3);
+}
+.about-img::after{
+  content:'';position:absolute;
+  bottom:-30px;right:-30px;
+  width:150px;height:150px;border-radius:50%;
+  background:rgba(255,255,255,0.1);
+}
+.about-img span{font-family:'Baloo 2',cursive;font-size:16px;font-weight:700;color:#fff;}
+.about-text .section-tag{background:#E8F8F5;color:var(--green);}
+.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+.about-card{
+  background:var(--light);border-radius:14px;padding:16px;
+  border-left:4px solid var(--blue);
+}
+.about-card .icon{font-size:22px;margin-bottom:6px;}
+.about-card h4{font-size:14px;font-weight:700;color:var(--navy);}
+.about-card p{font-size:12px;color:#666;margin-top:3px;}
+
+/* ── NOTICES ── */
+#notices{background:linear-gradient(135deg,#FFF9E6,#FFF0E6);}
+.notices-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.notice-card{
+  background:#fff;border-radius:16px;padding:22px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.07);
+  border-top:4px solid var(--orange);
+  transition:.3s;
+}
+.notice-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+.notice-date{font-size:11px;color:var(--orange);font-weight:700;margin-bottom:8px;}
+.notice-card h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--navy);}
+.notice-card p{font-size:13px;color:#555;line-height:1.7;}
+.notice-new{
+  display:inline-block;background:var(--pink);color:#fff;
+  font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:8px;
+}
+
+/* ── ADMISSION ── */
+#admission{background:#fff;}
+.admission-wrap{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  border-radius:28px;padding:50px;color:#fff;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;
+}
+.admission-left h2{font-family:'Baloo 2',cursive;font-size:32px;font-weight:800;margin-bottom:16px;}
+.admission-left p{font-size:15px;opacity:.85;line-height:1.8;margin-bottom:24px;}
+.steps{display:flex;flex-direction:column;gap:16px;}
+.step{display:flex;align-items:flex-start;gap:16px;}
+.step-num{
+  background:var(--yellow);color:var(--navy);
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;flex-shrink:0;margin-top:2px;
+}
+.step-text h4{font-size:15px;font-weight:700;margin-bottom:3px;}
+.step-text p{font-size:13px;opacity:.8;}
+
+/* ── FACULTY ── */
+#faculty{background:var(--light);}
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;}
+.faculty-card{
+  background:#fff;border-radius:20px;padding:28px 20px;
+  text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.07);
+  transition:.3s;border:2px solid transparent;
+}
+.faculty-card:hover{border-color:var(--blue);transform:translateY(-4px);}
+.faculty-avatar{
+  width:80px;height:80px;border-radius:50%;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;font-size:36px;
+}
+.faculty-card h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+.faculty-card .role{font-size:13px;color:var(--blue);font-weight:600;margin-bottom:6px;}
+.faculty-card .qual{font-size:12px;color:#888;}
+
+/* ── GALLERY ── */
+#gallery{background:#fff;}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto;
+  gap:16px;
+}
+.gallery-item{
+  border-radius:16px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  font-size:50px;aspect-ratio:1;
+  cursor:pointer;transition:.3s;position:relative;
+}
+.gallery-item:first-child{grid-column:span 2;aspect-ratio:2/1;}
+.gallery-item:hover{transform:scale(1.02);}
+.gallery-item .overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,0.35);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:.3s;color:#fff;font-size:14px;font-weight:700;
+}
+.gallery-item:hover .overlay{opacity:1;}
+
+/* ── CONTACT ── */
+#contact{background:linear-gradient(135deg,#E8F8F5,#E8F0FF);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+.contact-info h2{font-family:'Baloo 2',cursive;font-size:32px;font-weight:800;margin-bottom:20px;color:var(--navy);}
+.contact-details{display:flex;flex-direction:column;gap:18px;margin-bottom:30px;}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;}
+.contact-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.contact-detail h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.contact-detail p{font-size:13px;color:#555;line-height:1.6;}
+
+.contact-form{background:#fff;border-radius:24px;padding:36px;box-shadow:0 8px 30px rgba(0,0,0,0.08);}
+.contact-form h3{font-family:'Baloo 2',cursive;font-size:22px;font-weight:800;margin-bottom:24px;color:var(--navy);}
+.form-group{margin-bottom:18px;}
+.form-group label{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;display:block;}
+.form-group input,.form-group textarea,.form-group select{
+  width:100%;border:2px solid #E8EDF5;border-radius:10px;
+  padding:11px 14px;font-size:14px;font-family:'Hind',sans-serif;
+  transition:.2s;outline:none;
+}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--blue);}
+.form-group textarea{height:100px;resize:vertical;}
+.btn-submit{
+  width:100%;background:var(--blue);color:#fff;border:none;
+  padding:13px;border-radius:10px;font-size:15px;font-weight:700;
+  cursor:pointer;transition:.25s;font-family:'Hind',sans-serif;
+}
+.btn-submit:hover{background:var(--navy);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,0.8);padding:50px 5% 30px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand h2{font-family:'Baloo 2',cursive;font-size:22px;font-weight:800;color:#fff;margin-bottom:12px;}
+.footer-brand p{font-size:13px;line-height:1.8;}
+.footer-col h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;transition:.2s;}
+.footer-col ul li a:hover{color:var(--yellow);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;text-align:center;font-size:12px;}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:30px;right:30px;z-index:9999;
+  background:var(--green);color:#fff;padding:14px 22px;
+  border-radius:12px;font-weight:700;font-size:14px;
+  transform:translateY(100px);opacity:0;transition:.4s;
+  box-shadow:0 8px 24px rgba(0,0,0,0.2);
+}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .nav-links.open{
+    display:flex;flex-direction:column;
+    position:fixed;top:64px;left:0;right:0;
+    background:var(--navy);padding:20px 5%;gap:6px;
+  }
+  .about-grid,.admission-wrap,.contact-grid,.footer-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .gallery-item:first-child{grid-column:span 2;}
+  .about-cards{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="icon">🏫</span>
+    <span>GPS Banjara Basti<br>Nandpura</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">हमारे बारे में</a>
+    <a href="#notices">सूचनाएँ</a>
+    <a href="#admission">प्रवेश</a>
+    <a href="#faculty">शिक्षक</a>
+    <a href="#gallery">गैलरी</a>
+    <a href="#contact">संपर्क</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="floating-shapes">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="hero-badge">🎓 शैक्षणिक सत्र 2025–26</div>
+  <h1>Government Primary School<br><span>Banjara Basti, Nandpura</span></h1>
+  <p>जहाँ हर बच्चे का भविष्य उज्जवल होता है। ज्ञान, संस्कार और समर्पण के साथ श्रेष्ठ शिक्षा।</p>
+  <div class="hero-btns">
+    <a href="#admission" class="btn btn-primary">📝 प्रवेश लें</a>
+    <a href="#about" class="btn btn-outline">हमारे बारे में →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">200+</div><div class="label">विद्यार्थी</div></div>
+    <div class="stat"><div class="num">10+</div><div class="label">शिक्षक</div></div>
+    <div class="stat"><div class="num">25+</div><div class="label">वर्षों का अनुभव</div></div>
+    <div class="stat"><div class="num">1–5</div><div class="label">कक्षाएँ</div></div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      🏫<span>GPS Nandpura</span>
+    </div>
+    <div class="about-text">
+      <div class="section-head">
+        <span class="section-tag">📚 हमारे बारे में</span>
+        <h2 class="section-title">एक सपना — हर बच्चे को शिक्षा</h2>
+        <p class="section-sub">Government Primary School, Banjara Basti, Nandpura एक सरकारी प्राथमिक विद्यालय है जो गुणवत्तापूर्ण शिक्षा के लिए प्रतिबद्ध है।</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="icon">📖</div>
+          <h4>गुणवत्ता शिक्षा</h4>
+          <p>हिंदी, गणित, EVS — सभी विषयों में उत्कृष्ट शिक्षण</p>
+        </div>
+        <div class="about-card" style="border-color:var(--orange);">
+          <div class="icon">🍱</div>
+          <h4>मध्याह्न भोजन</h4>
+          <p>प्रतिदिन पोषण युक्त मिड-डे मील सभी बच्चों को</p>
+        </div>
+        <div class="about-card" style="border-color:var(--green);">
+          <div class="icon">🎨</div>
+          <h4>सह-शैक्षणिक</h4>
+          <p>खेल, कला, संगीत और सांस्कृतिक गतिविधियाँ</p>
+        </div>
+        <div class="about-card" style="border-color:var(--pink);">
+          <div class="icon">📋</div>
+          <h4>नि:शुल्क पुस्तकें</h4>
+          <p>सभी विद्यार्थियों को सरकारी पाठ्यपुस्तकें मुफ़्त</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NOTICES ══ -->
+<section id="notices">
+  <div class="section-head">
+    <span class="section-tag" style="background:#FFF0E6;color:var(--orange);">📢 सूचनाएँ</span>
+    <h2 class="section-title">ताज़ा सूचनाएँ एवं समाचार</h2>
+    <p class="section-sub">विद्यालय की महत्वपूर्ण सूचनाएँ यहाँ देखें।</p>
+  </div>
+  <div class="notices-grid">
+    <div class="notice-card">
+      <div class="notice-date">📅 15 अप्रैल 2026</div>
+      <h3>वार्षिक परीक्षा परिणाम <span class="notice-new">NEW</span></h3>
+      <p>कक्षा 1 से 5 तक के वार्षिक परीक्षा परिणाम घोषित किए गए हैं। अभिभावक विद्यालय से संपर्क करें।</p>
+    </div>
+    <div class="notice-card" style="border-color:var(--green);">
+      <div class="notice-date" style="color:var(--green);">📅 10 अप्रैल 2026</div>
+      <h3>नए सत्र में प्रवेश प्रारंभ <span class="notice-new">NEW</span></h3>
+      <p>सत्र 2025-26 के लिए कक्षा 1 में प्रवेश शुरू हो गए हैं। अधिक जानकारी के लिए विद्यालय में संपर्क करें।</p>
+    </div>
+    <div class="notice-card" style="border-color:var(--blue);">
+      <div class="notice-date" style="color:var(--blue);">📅 5 अप्रैल 2026</div>
+      <h3>अभिभावक-शिक्षक बैठक</h3>
+      <p>20 अप्रैल 2026 को अभिभावक-शिक्षक बैठक आयोजित की जाएगी। सभी अभिभावकों से उपस्थित रहने का अनुरोध है।</p>
+    </div>
+    <div class="notice-card" style="border-color:var(--pink);">
+      <div class="notice-date" style="color:var(--pink);">📅 1 अप्रैल 2026</div>
+      <h3>बाल दिवस उत्सव</h3>
+      <p>14 नवंबर को बाल दिवस के उपलक्ष्य में सांस्कृतिक कार्यक्रम आयोजित किए जाएंगे।</p>
+    </div>
+    <div class="notice-card">
+      <div class="notice-date">📅 25 मार्च 2026</div>
+      <h3>निःशुल्क पुस्तक वितरण</h3>
+      <p>सभी कक्षाओं के छात्रों को नई पाठ्यपुस्तकें निःशुल्क वितरित की जाएंगी।</p>
+    </div>
+    <div class="notice-card" style="border-color:var(--yellow);">
+      <div class="notice-date" style="color:#CC9900;">📅 20 मार्च 2026</div>
+      <h3>खेल दिवस प्रतियोगिता</h3>
+      <p>वार्षिक खेल दिवस का आयोजन अप्रैल माह में किया जाएगा। सभी छात्र भाग लें।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADMISSION ══ -->
+<section id="admission">
+  <div class="admission-wrap">
+    <div class="admission-left">
+      <h2>🎒 प्रवेश 2025–26<br>अभी आवेदन करें!</h2>
+      <p>हमारे विद्यालय में कक्षा 1 से 5 तक की शिक्षा प्रदान की जाती है। सरकारी विद्यालय होने के कारण यहाँ शिक्षा पूर्णतः निःशुल्क है।</p>
+      <a href="#contact" class="btn btn-primary" style="display:inline-block;">📝 आवेदन फॉर्म भरें</a>
+    </div>
+    <div class="admission-right">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>विद्यालय में आएं</h4>
+            <p>कार्यालय समय में विद्यालय में आकर जानकारी लें</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>आवश्यक दस्तावेज</h4>
+            <p>जन्म प्रमाण पत्र, आधार कार्ड, निवास प्रमाण पत्र</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>फॉर्म भरें</h4>
+            <p>प्रवेश फॉर्म भरकर कार्यालय में जमा करें</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <h4>प्रवेश पुष्टि</h4>
+            <p>फॉर्म की जांच के बाद प्रवेश की पुष्टि की जाएगी</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FACULTY ══ -->
+<section id="faculty">
+  <div class="section-head">
+    <span class="section-tag" style="background:#E8F0FF;color:var(--blue);">👨‍🏫 हमारे शिक्षक</span>
+    <h2 class="section-title">अनुभवी एवं समर्पित शिक्षक दल</h2>
+    <p class="section-sub">हमारे शिक्षक बच्चों के उज्जवल भविष्य के लिए पूरी निष्ठा से कार्य करते हैं।</p>
+  </div>
+  <div class="faculty-grid">
+    <div class="faculty-card">
+      <div class="faculty-avatar" style="background:#E8F0FF;">👨‍💼</div>
+      <h3>श्री रामकिशन शर्मा</h3>
+      <div class="role">प्रधानाध्यापक</div>
+      <div class="qual">M.A., B.Ed | 20 वर्ष अनुभव</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar" style="background:#FFF0E6;">👩‍🏫</div>
+      <h3>श्रीमती सुनीता पाटील</h3>
+      <div class="role" style="color:var(--orange);">वरिष्ठ शिक्षिका</div>
+      <div class="qual">B.A., B.Ed | 15 वर्ष अनुभव</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar" style="background:#E8F8F5;">👨‍🏫</div>
+      <h3>श्री महेश कुमार</h3>
+      <div class="role" style="color:var(--green);">गणित शिक्षक</div>
+      <div class="qual">B.Sc., B.Ed | 12 वर्ष अनुभव</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar" style="background:#FDE8EF;">👩‍🏫</div>
+      <h3>श्रीमती प्रिया वर्मा</h3>
+      <div class="role" style="color:var(--pink);">हिंदी शिक्षिका</div>
+      <div class="qual">M.A. Hindi, B.Ed | 8 वर्ष</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar" style="background:#FFFBE6;">👨‍🎨</div>
+      <h3>श्री अजय सिंह</h3>
+      <div class="role" style="color:#CC9900;">कला एवं क्राफ्ट</div>
+      <div class="qual">BFA | 6 वर्ष अनुभव</div>
+    </div>
+    <div class="faculty-card">
+      <div class="faculty-avatar" style="background:#F0F8FF;">👩‍💻</div>
+      <h3>श्रीमती कविता राव</h3>
+      <div class="role">EVS शिक्षिका</div>
+      <div class="qual">B.Sc., B.Ed | 10 वर्ष</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section id="gallery">
+  <div class="section-head">
+    <span class="section-tag" style="background:#FFF9E6;color:#CC9900;">📸 गैलरी</span>
+    <h2 class="section-title">विद्यालय की झलकियाँ</h2>
+    <p class="section-sub">हमारे विद्यालय की खूबसूरत यादें और गतिविधियाँ।</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" style="background:linear-gradient(135deg,#118AB2,#06D6A0);">
+      🏫<div class="overlay">विद्यालय परिसर</div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#FF6B35,#FFD23F);">
+      📚<div class="overlay">पुस्तकालय</div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#EF476F,#FF6B35);">
+      🎨<div class="overlay">कला कक्ष</div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#06D6A0,#118AB2);">
+      ⚽<div class="overlay">खेल मैदान</div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#073B4C,#118AB2);">
+      🎤<div class="overlay">सांस्कृतिक कार्यक्रम</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>📞 हमसे संपर्क करें</h2>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-icon" style="background:#E8F0FF;">📍</div>
+          <div>
+            <h4>पता</h4>
+            <p>Government Primary School,<br>Banjara Basti, Nandpura,<br>Madhya Pradesh</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" style="background:#E8F8F5;">📞</div>
+          <div>
+            <h4>फ़ोन नंबर</h4>
+            <p>+91 XXXXX XXXXX</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" style="background:#FFF0E6;">🕐</div>
+          <div>
+            <h4>कार्यालय समय</h4>
+            <p>सोमवार – शनिवार<br>सुबह 8:00 – दोपहर 2:00 बजे</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon" style="background:#FDE8EF;">📧</div>
+          <div>
+            <h4>ईमेल</h4>
+            <p>gps.banjarabasti@mp.gov.in</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>✉️ संदेश भेजें</h3>
+      <div class="form-group">
+        <label>आपका नाम *</label>
+        <input type="text" placeholder="अपना पूरा नाम लिखें" id="fname"/>
+      </div>
+      <div class="form-group">
+        <label>मोबाइल नंबर *</label>
+        <input type="tel" placeholder="10 अंकों का मोबाइल नंबर" id="fphone"/>
+      </div>
+      <div class="form-group">
+        <label>विषय</label>
+        <select id="fsubject">
+          <option value="">— विषय चुनें —</option>
+          <option>प्रवेश संबंधी जानकारी</option>
+          <option>शिक्षा संबंधी प्रश्न</option>
+          <option>अन्य जानकारी</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>आपका संदेश</label>
+        <textarea placeholder="अपना संदेश यहाँ लिखें..." id="fmsg"></textarea>
+      </div>
+      <button class="btn-submit" onclick="sendMsg()">📤 संदेश भेजें</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h2>🏫 GPS Banjara Basti</h2>
+      <p>Government Primary School, Banjara Basti, Nandpura — जहाँ हर बच्चे का सपना पूरा होता है। गुणवत्तापूर्ण शिक्षा हमारा संकल्प।</p>
+    </div>
+    <div class="footer-col">
+      <h4>त्वरित लिंक</h4>
+      <ul>
+        <li><a href="#about">हमारे बारे में</a></li>
+        <li><a href="#notices">सूचनाएँ</a></li>
+        <li><a href="#admission">प्रवेश</a></li>
+        <li><a href="#faculty">शिक्षक</a></li>
+        <li><a href="#gallery">गैलरी</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>महत्वपूर्ण</h4>
+      <ul>
+        <li><a href="#">RTI जानकारी</a></li>
+        <li><a href="#">छात्रवृत्ति</a></li>
+        <li><a href="#">परिणाम</a></li>
+        <li><a href="#contact">संपर्क</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Government Primary School, Banjara Basti, Nandpura &nbsp;|&nbsp; सर्वाधिकार सुरक्षित &nbsp;|&nbsp; 🇮🇳 Made with ❤️ for Bharat</p>
+  </div>
+</footer>
+
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast">✅ आपका संदेश भेज दिया गया!</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+function sendMsg(){
+  const n=document.getElementById('fname').value.trim();
+  const p=document.getElementById('fphone').value.trim();
+  if(!n||!p){alert('कृपया नाम और मोबाइल नंबर भरें।');return;}
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+  document.getElementById('fname').value='';
+  document.getElementById('fphone').value='';
+  document.getElementById('fsubject').value='';
+  document.getElementById('fmsg').value='';
+}
+// scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='translateY(0)';}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.notice-card,.faculty-card,.gallery-item,.about-card').forEach(el=>{
+  el.style.opacity=0;el.style.transform='translateY(30px)';
+  el.style.transition='opacity .5s ease, transform .5s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
