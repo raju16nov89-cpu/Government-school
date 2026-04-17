@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission Form</title>
+
+<style>
+body{font-family:Arial;background:#f5f5f5;padding:20px;}
+.form-box{
+  max-width:550px;margin:auto;background:white;padding:20px;border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+input,select,textarea{
+  width:100%;padding:10px;margin:10px 0;border-radius:5px;border:1px solid #ccc;
+}
+button{
+  width:100%;padding:12px;background:#073B4C;color:white;border:none;border-radius:5px;
+  font-size:16px;
+}
+h2{text-align:center;}
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+<h2>🎓 छात्र प्रवेश फॉर्म</h2>
+
+<form action="https://formspree.io/f/abcdxyz" method="POST" enctype="multipart/form-data">
+
+<input type="text" name="student_name" placeholder="छात्र का नाम" required>
+
+<input type="text" name="father_name" placeholder="पिता का नाम" required>
+
+<input type="text" name="mother_name" placeholder="माता का नाम">
+
+<input type="number" name="age" placeholder="आयु" required>
+
+<select name="class">
+  <option>कक्षा चुनें</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+
+<input type="text" name="mobile" placeholder="मोबाइल नंबर" required>
+
+<!-- Aadhaar -->
+<input type="tel" name="aadhaar" placeholder="आधार नंबर (12 अंक)" pattern="[0-9]{12}" required>
+
+<!-- Jan Aadhaar -->
+<input type="text" name="jan_aadhaar" placeholder="जन आधार नंबर" required>
+
+<!-- Address -->
+<textarea name="address" placeholder="पूरा पता"></textarea>
+
+<!-- Photo Upload -->
+<label>छात्र की फोटो अपलोड करें</label>
+<input type="file" name="photo">
+
+<!-- Document Upload -->
+<label>दस्तावेज़ अपलोड करें (जन्म प्रमाण पत्र आदि)</label>
+<input type="file" name="document">
+
+<button type="submit">फॉर्म जमा करें</button>
+
+</form>
+</div>
+
+</body>
+</html>
